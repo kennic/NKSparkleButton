@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'NKSparkleButton_Example' do
+  pod 'NKSparkleButton', :path => '../'
+
+  target 'NKSparkleButton_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
