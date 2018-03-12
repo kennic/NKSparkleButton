@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'NKSparkleButton'
-  s.version          = '0.1.0'
+  s.version          = '1.0'
   s.summary          = 'Add sparkle effect to NKButton'
 
 # This description is used to generate tags and improve search results.
