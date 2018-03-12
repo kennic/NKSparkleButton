@@ -33,6 +33,8 @@ let button = NKSparkleButton()
 
 Nam Kennic, namkennic@me.com
 
+Animation is from https://github.com/okmr-d/DOFavoriteButton
+
 ## License
 
 NKSparkleButton is available under the MIT license. See the LICENSE file for more info.
