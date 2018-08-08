@@ -1,27 +1,31 @@
 PODS:
-  - NKButton (1.2):
-    - NKFrameLayoutKit
-    - NVActivityIndicatorView
-  - NKFrameLayoutKit (1.8.7)
-  - NKSparkleButton (0.1.0):
+  - FrameLayoutKit (3.2.2)
+  - NKButton (3.2):
+    - FrameLayoutKit
+    - NVActivityIndicatorView/AppExtension
+  - NKSparkleButton (1.0):
     - NKButton
-  - NVActivityIndicatorView (4.1.1):
-    - NVActivityIndicatorView/Presenter (= 4.1.1)
-  - NVActivityIndicatorView/Presenter (4.1.1)
+  - NVActivityIndicatorView/AppExtension (4.3.0)
 
 DEPENDENCIES:
   - NKSparkleButton (from `../`)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - FrameLayoutKit
+    - NKButton
+    - NVActivityIndicatorView
+
 EXTERNAL SOURCES:
   NKSparkleButton:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  NKButton: cadcce07b76df6378c08df4bd096f94c7030bd98
-  NKFrameLayoutKit: 8f42f38532cdf725848c5466827ed398130df7d4
-  NKSparkleButton: 6f6d5503e503095e7c6d55cc67bcbe1ffe4ee2d0
-  NVActivityIndicatorView: 60109b9bf46efc2e71ab81453196ccdfdfeea870
+  FrameLayoutKit: 5ae84edde016a3c39d7c66051620a1bb73b80d52
+  NKButton: 5106661f358eb1acf7158d1a17f0d85cd45b0c7a
+  NKSparkleButton: 1ed9a3c0225aa4fc97a2ace636eec346351f51be
+  NVActivityIndicatorView: 963f62bf9f993fcf23218e55958e5b1761b9504c
 
 PODFILE CHECKSUM: d82b6d7cfc09cdeb9b335f0d697cd12c5ce2c7e5
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3
