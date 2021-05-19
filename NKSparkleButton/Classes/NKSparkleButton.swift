@@ -74,7 +74,7 @@ open class NKSparkleButton: NKButton {
 	
 	fileprivate func setupValues() {
 		sparleContainer.isUserInteractionEnabled = false
-		self.addSubview(sparleContainer)
+		addSubview(sparleContainer)
 		
 		// circle transform animation
 		circleTransform.duration = 0.333 // 0.0333 * 10
@@ -223,7 +223,7 @@ open class NKSparkleButton: NKButton {
 		let targetLayer = sparleContainer.layer
 //		targetLayer.sublayers = nil
 		
-		sparleContainer.frame = self.bounds
+		sparleContainer.frame = bounds
 		let imageFrame = CGRect(x: frame.size.width / 2 - frame.size.width / 4, y: frame.size.height / 2 - frame.size.height / 4, width: frame.size.width / 2, height: frame.size.height / 2)
 		let imgCenterPoint = CGPoint(x: imageFrame.midX, y: imageFrame.midY)
 		let lineFrame = CGRect(x: imageFrame.origin.x - imageFrame.width / 4, y: imageFrame.origin.y - imageFrame.height / 4 , width: imageFrame.width * 1.5, height: imageFrame.height * 1.5)
@@ -244,7 +244,7 @@ open class NKSparkleButton: NKButton {
 		if circleMask == nil {
 			circleMask = CAShapeLayer()
 			circleShape?.mask = circleMask
-			circleMask?.fillRule = kCAFillRuleEvenOdd
+			circleMask?.fillRule = .evenOdd
 		}
 		
 		circleMask?.bounds = imageFrame
@@ -264,8 +264,8 @@ open class NKSparkleButton: NKButton {
 				line.strokeColor = lineColor.cgColor
 				line.lineWidth = 1.25
 				line.miterLimit = 1.25
-				line.lineCap = kCALineCapRound
-				line.lineJoin = kCALineJoinRound
+				line.lineCap = .round
+				line.lineJoin = .round
 				line.strokeStart = 0.0
 				line.strokeEnd = 0.0
 				line.opacity = 0.0
@@ -303,27 +303,27 @@ open class NKSparkleButton: NKButton {
 	}
 	
 	fileprivate func addTargets() {
-		self.addTarget(self, action: #selector(touchDown(_:)), for: .touchDown)
-		self.addTarget(self, action: #selector(touchUpInside(_:)), for: .touchUpInside)
-		self.addTarget(self, action: #selector(touchDragExit(_:)), for: .touchDragExit)
-		self.addTarget(self, action: #selector(touchDragEnter(_:)), for: .touchDragEnter)
-		self.addTarget(self, action: #selector(touchCancel(_:)), for: .touchCancel)
+		addTarget(self, action: #selector(touchDown(_:)), for: .touchDown)
+		addTarget(self, action: #selector(touchUpInside(_:)), for: .touchUpInside)
+		addTarget(self, action: #selector(touchDragExit(_:)), for: .touchDragExit)
+		addTarget(self, action: #selector(touchDragEnter(_:)), for: .touchDragEnter)
+		addTarget(self, action: #selector(touchCancel(_:)), for: .touchCancel)
 	}
 	
 	@objc func touchDown(_ sender: NKSparkleButton) {
-		self.layer.opacity = 0.4
+		layer.opacity = 0.4
 	}
 	@objc func touchUpInside(_ sender: NKSparkleButton) {
-		self.layer.opacity = 1.0
+		layer.opacity = 1.0
 	}
 	@objc func touchDragExit(_ sender: NKSparkleButton) {
-		self.layer.opacity = 1.0
+		layer.opacity = 1.0
 	}
 	@objc func touchDragEnter(_ sender: NKSparkleButton) {
-		self.layer.opacity = 0.4
+		layer.opacity = 0.4
 	}
 	@objc func touchCancel(_ sender: NKSparkleButton) {
-		self.layer.opacity = 1.0
+		layer.opacity = 1.0
 	}
 	
 	public func sparkle() {
@@ -332,7 +332,7 @@ open class NKSparkleButton: NKButton {
 		
 		circleShape?.add(circleTransform, forKey: "transform")
 		circleMask?.add(circleMaskTransform, forKey: "transform")
-		self.imageView?.layer.add(imageTransform, forKey: "transform")
+		imageView?.layer.add(imageTransform, forKey: "transform")
 		
 		if lines.count == 5 {
 			for i in 0 ..< 5 {
@@ -348,7 +348,7 @@ open class NKSparkleButton: NKButton {
 	public func removeAllAnimation() {
 		circleShape?.removeAllAnimations()
 		circleMask?.removeAllAnimations()
-		self.imageView?.layer.removeAllAnimations()
+		imageView?.layer.removeAllAnimations()
 		
 		for line in lines {
 			line.removeAllAnimations()
